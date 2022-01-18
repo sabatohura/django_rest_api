@@ -22,4 +22,12 @@ class Transaction(models.Model):
     category = models.ForeignKey(Category, on_delete=SET_NULL, null=True, blank=True, related_name="transactions")
     def __str__(self):
         return f"{self.amount} {self.currency.code} {self.date}"
-        
+
+class User(models.Model):
+    username = models.CharField(max_length=100, blank=False)
+    location = models.CharField(max_length=100,blank=True)
+    phone = models.CharField(max_length=12,blank=True)
+    fullname = models.TextField(blank=False)
+    def __str__(self):
+        return f"{self.username} {self.location} {self.phone} {self.fullname}"
+

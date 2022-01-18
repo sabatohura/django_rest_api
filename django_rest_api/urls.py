@@ -7,7 +7,8 @@ from rest_framework import routers
 #     path('admin/', admin.site.urls),
 # ]
 router = routers.SimpleRouter()
-router.register(r'categories', views.CategoryModelViewSet, basename="category")
+router.register(r'categories', views.CategoryModelViewSet, basename="category"),
+router.register(r'users', views.UserModelViewSet, basename ="user")
 urlpatterns = [ 
     path('currencies/', views.CurrencyListAPIView.as_view(), name="currencies"),
 
