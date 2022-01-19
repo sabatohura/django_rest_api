@@ -31,3 +31,11 @@ class User(models.Model):
     def __str__(self):
         return f"{self.username} {self.location} {self.phone} {self.fullname}"
 
+class imageProfile(models.Model):
+    imagename = models.CharField(max_length=100, blank=False)
+    userId = models.ForeignKey(User, on_delete=SET_NULL, null=True, blank=True, related_name="users")
+    uploadedate = models.DateTimeField(blank=True)
+
+    def __str__(self):
+        return f"{self.imagename} {self.userId} {self.uploadedate}"
+

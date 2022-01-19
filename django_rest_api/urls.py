@@ -8,7 +8,8 @@ from rest_framework import routers
 # ]
 router = routers.SimpleRouter()
 router.register(r'categories', views.CategoryModelViewSet, basename="category"),
-router.register(r'users', views.UserModelViewSet, basename ="user")
+router.register(r'users', views.UserModelViewSet, basename ="user"),
+router.register(r'imageProfile', views.imageProfileModelViewSet, basename="imageprofile")
 urlpatterns = [ 
     path('currencies/', views.CurrencyListAPIView.as_view(), name="currencies"),
 
